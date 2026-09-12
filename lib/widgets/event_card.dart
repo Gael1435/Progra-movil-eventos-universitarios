@@ -130,7 +130,7 @@ class _EventCardState extends State<EventCard> {
                 icon: Icon(
                   _registrado ? Icons.how_to_reg : Icons.check_circle_outline,
                 ),
-                label: Text(_registrado ? 'Registrado' : 'Me interesa'),
+                label: Text(_registrado ? 'Registrado' : 'Registrarte'),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
