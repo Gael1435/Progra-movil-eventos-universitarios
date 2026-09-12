@@ -113,7 +113,6 @@ class _EventCardState extends State<EventCard> {
               ],
             ),
           ),
-          const Spacer(),
           Padding(
             padding: const EdgeInsets.all(12),
             child: SizedBox(

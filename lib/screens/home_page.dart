@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisCount: columnas,
                         crossAxisSpacing: 16,
                         mainAxisSpacing: 16,
-                        childAspectRatio: isMobile ? 1.0 : 0.65,
+                        childAspectRatio: isMobile ? 0.55 : 0.65,
                       ),
                       itemBuilder: (context, index) {
                         final evento = eventosMostrados[index];
