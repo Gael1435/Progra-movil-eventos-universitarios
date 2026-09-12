@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class EventCard extends StatelessWidget {
+class EventCard extends StatefulWidget {
   final Map<String, dynamic> evento;
   final VoidCallback onPressed;
 
@@ -11,6 +11,13 @@ class EventCard extends StatelessWidget {
   });
 
   @override
+  State<EventCard> createState() => _EventCardState();
+}
+
+class _EventCardState extends State<EventCard> {
+  bool _registrado = false;
+
+  @override
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.antiAlias,
@@ -19,7 +26,7 @@ class EventCard extends StatelessWidget {
         children: [
           Expanded(
             child: Image.network(
-              evento['imagen'],
+              widget.evento['imagen'],
               width: double.infinity,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
@@ -32,7 +39,7 @@ class EventCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(12),
             child: Text(
-              evento['titulo'],
+              widget.evento['titulo'],
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -45,11 +52,11 @@ class EventCard extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor.withAlpha(26), // 0.1 * 255 = ~26
+                color: Theme.of(context).primaryColor.withAlpha(26),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                evento['categoria'],
+                widget.evento['categoria'],
                 style: TextStyle(
                   color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.w600,
@@ -65,21 +72,18 @@ class EventCard extends StatelessWidget {
               children: [
                 Icon(Icons.calendar_today, size: 16, color: Theme.of(context).hintColor),
                 const SizedBox(width: 4),
-                Text(evento['fecha'], style: TextStyle(color: Theme.of(context).hintColor)),
+                Text(widget.evento['fecha'], style: TextStyle(color: Theme.of(context).hintColor)),
               ],
             ),
           ),
           const SizedBox(height: 4),
-
-          // TODO 1:
-          // Agregar al diseño la hora, el lugar y el cupo del evento.
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: Row(
               children: [
                 Icon(Icons.access_time, size: 16, color: Theme.of(context).hintColor),
                 const SizedBox(width: 4),
-                Text(evento['hora'], style: TextStyle(color: Theme.of(context).hintColor)),
+                Text(widget.evento['hora'], style: TextStyle(color: Theme.of(context).hintColor)),
               ],
             ),
           ),
@@ -91,7 +95,7 @@ class EventCard extends StatelessWidget {
                 const SizedBox(width: 4),
                 Expanded(
                   child: Text(
-                    evento['lugar'],
+                    widget.evento['lugar'],
                     style: TextStyle(color: Theme.of(context).hintColor),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -105,29 +109,35 @@ class EventCard extends StatelessWidget {
               children: [
                 Icon(Icons.people, size: 16, color: Theme.of(context).hintColor),
                 const SizedBox(width: 4),
-                Text('Cupo: ${evento['cupo']} lugares', style: TextStyle(color: Theme.of(context).hintColor)),
+                Text('Cupo: ${widget.evento['cupo']} lugares', style: TextStyle(color: Theme.of(context).hintColor)),
               ],
             ),
           ),
-
           const Spacer(),
-
-          // TODO 2:
-          // Agregar un botón que permita registrarse o marcar
-          // el evento como "Me interesa".
           Padding(
             padding: const EdgeInsets.all(12),
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: onPressed,
-                icon: const Icon(Icons.check_circle_outline),
-                label: const Text('Me interesa'),
+                onPressed: () {
+                  if (!_registrado) {
+                    setState(() {
+                      _registrado = true;
+                    });
+                    widget.onPressed();
+                  }
+                },
+                icon: Icon(
+                  _registrado ? Icons.how_to_reg : Icons.check_circle_outline,
+                ),
+                label: Text(_registrado ? 'Registrado' : 'Me interesa'),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  backgroundColor: Theme.of(context).primaryColor,
+                  backgroundColor: _registrado 
+                      ? Colors.green 
+                      : Theme.of(context).primaryColor,
                   foregroundColor: Colors.white,
                 ),
               ),
