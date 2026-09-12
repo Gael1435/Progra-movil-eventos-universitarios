@@ -24,7 +24,8 @@ class _EventCardState extends State<EventCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
+          AspectRatio(
+            aspectRatio: 16 / 10,
             child: Image.network(
               widget.evento['imagen'],
               width: double.infinity,
@@ -113,6 +114,7 @@ class _EventCardState extends State<EventCard> {
               ],
             ),
           ),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.all(12),
             child: SizedBox(
