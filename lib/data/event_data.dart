@@ -1,0 +1,186 @@
+// Datos iniciales para la práctica.
+//
+// Pueden agregar más eventos o modificar estos datos.
+// No es obligatorio conservar exactamente estos eventos.
+
+const List<String> categorias = [
+  'Todos',
+  'Académicos',
+  'Deportivos',
+  'Culturales',
+  'Tecnología',
+  'Talleres',
+];
+
+const List<Map<String, dynamic>> eventos = [
+  {
+    'titulo': 'Hackathon Universitario',
+    'categoria': 'Tecnología',
+    'fecha': '18 de septiembre',
+    'hora': '09:00',
+    'lugar': 'Laboratorio de Cómputo',
+    'cupo': 40,
+    'imagen':
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900',
+  },
+  {
+    'titulo': 'Taller de Flutter',
+    'categoria': 'Talleres',
+    'fecha': '20 de septiembre',
+    'hora': '12:00',
+    'lugar': 'Edificio 5',
+    'cupo': 25,
+    'imagen':
+        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900',
+  },
+  {
+    'titulo': 'Conferencia de Inteligencia Artificial',
+    'categoria': 'Académicos',
+    'fecha': '23 de septiembre',
+    'hora': '10:00',
+    'lugar': 'Auditorio Central',
+    'cupo': 120,
+    'imagen':
+        'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900',
+  },
+  {
+    'titulo': 'Torneo de Futbol',
+    'categoria': 'Deportivos',
+    'fecha': '25 de septiembre',
+    'hora': '16:00',
+    'lugar': 'Cancha Universitaria',
+    'cupo': 80,
+    'imagen':
+        'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=900',
+  },
+  {
+    'titulo': 'Exposición de Arte',
+    'categoria': 'Culturales',
+    'fecha': '27 de septiembre',
+    'hora': '11:00',
+    'lugar': 'Galería Universitaria',
+    'cupo': 60,
+    'imagen':
+        'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=900',
+  },
+  {
+    'titulo': 'Charla de Ciberseguridad',
+    'categoria': 'Tecnología',
+    'fecha': '30 de septiembre',
+    'hora': '13:00',
+    'lugar': 'Sala Audiovisual',
+    'cupo': 50,
+    'imagen':
+        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900',
+  },
+  {
+    'titulo': 'Taller de Emprendimiento',
+    'categoria': 'Talleres',
+    'fecha': '2 de octubre',
+    'hora': '15:00',
+    'lugar': 'Centro de Innovación',
+    'cupo': 35,
+    'imagen':
+        'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900',
+  },
+  {
+    'titulo': 'Festival Universitario',
+    'categoria': 'Culturales',
+    'fecha': '5 de octubre',
+    'hora': '17:00',
+    'lugar': 'Plaza Principal',
+    'cupo': 200,
+    'imagen':
+        'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=900',
+  },
+  {
+    'titulo': 'Torneo de Voleibol',
+    'categoria': 'Deportivos',
+    'fecha': '10 de octubre',
+    'hora': '14:00',
+    'lugar': 'Gimnasio Techado',
+    'cupo': 60,
+    'imagen': 'https://images.unsplash.com/photo-1592656094267-764a45160876?w=900',
+  },
+  {
+    'titulo': 'Seminario de Física Cuántica',
+    'categoria': 'Académicos',
+    'fecha': '12 de octubre',
+    'hora': '09:00',
+    'lugar': 'Aula Magna',
+    'cupo': 150,
+    'imagen': 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900',
+  },
+  {
+    'titulo': 'Clase Maestra de Guitarra',
+    'categoria': 'Culturales',
+    'fecha': '15 de octubre',
+    'hora': '16:00',
+    'lugar': 'Salón de Música',
+    'cupo': 30,
+    'imagen': 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=900',
+  },
+  {
+    'titulo': 'Torneo de e-Sports',
+    'categoria': 'Tecnología',
+    'fecha': '18 de octubre',
+    'hora': '10:00',
+    'lugar': 'Sala de Cómputo 2',
+    'cupo': 80,
+    'imagen': 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900',
+  },
+  {
+    'titulo': 'Taller de Oratoria',
+    'categoria': 'Talleres',
+    'fecha': '20 de octubre',
+    'hora': '11:00',
+    'lugar': 'Auditorio Pequeño',
+    'cupo': 40,
+    'imagen': 'https://images.unsplash.com/photo-1475721025599-cf1dea14b60c?w=900',
+  },
+  {
+    'titulo': 'Carrera 5K',
+    'categoria': 'Deportivos',
+    'fecha': '22 de octubre',
+    'hora': '07:30',
+    'lugar': 'Pista de Atletismo',
+    'cupo': 300,
+    'imagen': 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=900',
+  },
+  {
+    'titulo': 'Presentación de Libro',
+    'categoria': 'Académicos',
+    'fecha': '25 de octubre',
+    'hora': '18:00',
+    'lugar': 'Biblioteca Central',
+    'cupo': 100,
+    'imagen': 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=900',
+  },
+  {
+    'titulo': 'Noche de Cine Independiente',
+    'categoria': 'Culturales',
+    'fecha': '27 de octubre',
+    'hora': '19:00',
+    'lugar': 'Explanada',
+    'cupo': 200,
+    'imagen': 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=900',
+  },
+  {
+    'titulo': 'Taller de Robótica',
+    'categoria': 'Tecnología',
+    'fecha': '30 de octubre',
+    'hora': '14:00',
+    'lugar': 'Laboratorio de Robótica',
+    'cupo': 20,
+    'imagen': 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900',
+  },
+  {
+    'titulo': 'Taller de Primeros Auxilios',
+    'categoria': 'Talleres',
+    'fecha': '2 de noviembre',
+    'hora': '09:00',
+    'lugar': 'Clínica Universitaria',
+    'cupo': 30,
+    'imagen': 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=900',
+  },
+];
