@@ -136,7 +136,7 @@ const List<Map<String, dynamic>> eventos = [
     'hora': '11:00',
     'lugar': 'Auditorio Pequeño',
     'cupo': 40,
-    'imagen': 'https://images.unsplash.com/photo-1475721025599-cf1dea14b60c?w=900',
+    'imagen': 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900',
   },
   {
     'titulo': 'Carrera 5K',
