@@ -1,7 +1,4 @@
-// Datos iniciales para la práctica.
-//
-// Pueden agregar más eventos o modificar estos datos.
-// No es obligatorio conservar exactamente estos eventos.
+
 
 const List<String> categorias = [
   'Todos',

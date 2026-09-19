@@ -23,20 +23,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO:
-    // Actualmente se muestran TODOS los eventos.
-    //
-    // El alumno debe modificar esta parte para que:
-    //
-    // - Si categoriaSeleccionada == 'Todos':
-    //     se muestren todos los eventos.
-    //
-    // - Si se selecciona otra categoría:
-    //     solamente aparezcan los eventos de esa categoría.
-    //
-    // Pista:
-    // List.where(...).toList();
-
     final eventosMostrados = categoriaSeleccionada == 'Todos'
         ? eventos
         : eventos
@@ -113,7 +99,6 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    // Base responsiva
                     final columnas = constraints.maxWidth >= 1200
                         ? 5
                         : constraints.maxWidth >= 900
@@ -122,7 +107,6 @@ class _HomePageState extends State<HomePage> {
                                 ? 3
                                 : 1;
                     
-                    // Modificar childAspectRatio dependiendo del ancho para evitar overflow
                     final isMobile = constraints.maxWidth < 600;
 
                     return GridView.builder(
